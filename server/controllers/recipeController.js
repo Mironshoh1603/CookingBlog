@@ -1,6 +1,6 @@
 require("../models/database");
 const Category = require("../models/Category");
-// const Recipe = require('../models/Recipe');
+const Recipe = require("../models/Recipe");
 
 /**
  * GET /
@@ -46,37 +46,37 @@ exports.expoleCategories = async (req, res) => {
  * GET /categories
  * Categories
  */
-async function insertDummyCategoryDate() {
-  try {
-    await Category.insertMany([
-      {
-        name: "Thai",
-        image: "thai-food.jpg",
-      },
-      {
-        name: "American",
-        image: "american-food.jpg",
-      },
-      {
-        name: "Chinese",
-        image: "chinese-food.jpg",
-      },
-      {
-        name: "Mexican",
-        image: "mexican-food.jpg",
-      },
-      {
-        name: "Indian",
-        image: "indian-food.jpg",
-      },
-      {
-        name: "Spanish",
-        image: "spanish-food.jpg",
-      },
-    ]);
-  } catch (err) {
-    console.log("error is", err);
-  }
-}
+// async function insertDummyRecipeDate() {
+//   try {
+//     await Recipe.insertMany([
+//       {
+//         name: "Recipe Name Goes Here",
+//         description: `Recipe Description Goes Here`,
+//         email: "recipeemail@raddy.co.uk",
+//         ingredients: [
+//           "1 level teaspoon baking powder",
+//           "1 level teaspoon cayenne pepper",
+//           "1 level teaspoon hot smoked paprika",
+//         ],
+//         category: "American",
+//         image: "southern-friend-chicken.jpg",
+//       },
+//       {
+//         name: "Recipe Name Goes Here",
+//         description: `Recipe Description Goes Here`,
+//         email: "recipeemail@raddy.co.uk",
+//         ingredients: [
+//           "1 level teaspoon baking powder",
+//           "1 level teaspoon cayenne pepper",
+//           "1 level teaspoon hot smoked paprika",
+//         ],
+//         category: "American",
+//         image: "southern-friend-chicken.jpg",
+//       },
+//     ]);
+//   } catch (err) {
+//     console.log("error is", err);
+//   }
+// }
 
-// insertDummyCategoryDate();
+// insertDummyRecipeDate();
