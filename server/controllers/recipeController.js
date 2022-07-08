@@ -17,7 +17,7 @@ exports.homepage = async (req, res) => {
 
     // const food = { latest, thai, american, chinese };
 
-    res.render("index");
+    res.render("index", { title: "Cooking Blog - Home " });
   } catch (error) {
     res.satus(500).send({ message: error.message || "Error Occured" });
   }
