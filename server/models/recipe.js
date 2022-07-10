@@ -1,31 +1,35 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const recipeSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: [true, "this field id required!"],
+    required: 'This field is required.'
   },
   description: {
     type: String,
-    required: [true, "this field id required!"],
+    required: 'This field is required.'
   },
   email: {
     type: String,
-    required: [true, "this field id required!"],
+    required: 'This field is required.'
   },
   ingredients: {
     type: Array,
-    required: [true, "this field id required!"],
+    required: 'This field is required.'
   },
-  categories: {
-    type: Array,
-    enam: ["Thai", "American", "Chinese", "Mexican", "Indian"],
-    required: [true, "this field id required!"],
+  category: {
+    type: String,
+    enum: ['Thai', 'American', 'Chinese', 'Mexican', 'Indian'],
+    required: 'This field is required.'
   },
   image: {
     type: String,
-    required: [true, "this field id required!"],
+    required: 'This field is required.'
   },
 });
 
-module.exports = mongoose.model("recipe", recipeSchema);
+recipeSchema.index({ name: 'text', description: 'text' });
+// WildCard Indexing
+//recipeSchema.index({ "$**" : 'text' });
+
+module.exports = mongoose.model('Recipe', recipeSchema);
