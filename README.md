@@ -1,8 +1,5 @@
 # Recipe Blog - Using Node.js and MongoDB
 
-This was created as part of YouTube Video. Links below
-
-![GitHub Logo](https://raddy.dev/wp-content/uploads/2021/09/recipe-blog-nodejs-mongoose.jpg)
 
 UPDATE THIS
 
